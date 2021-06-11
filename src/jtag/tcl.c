@@ -625,6 +625,14 @@ static int jim_newtap_cmd(Jim_GetOptInfo *goi)
 					instance_id_specified = true;
 					e = jim_newtap_md_param(n, goi, pTap);
 					break;
+                case NTAP_OPT_EXPECTED_ID:
+                    e = jim_newtap_expected_id(n, goi, pTap);
+                    if (JIM_OK != e) {
+                        free(cp);
+                        free(pTap);
+                        return e;
+                    }
+                    break;
 				default:
 					e = JIM_OK;
 					break;
