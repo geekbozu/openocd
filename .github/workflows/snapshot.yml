@@ -19,7 +19,7 @@ jobs:
       - run: ./bootstrap
       - name: Prepare libusb1
         env:
-          LIBUSB1_VER: 1.0.22
+          LIBUSB1_VER: 1.0.23
         run: |
           mkdir -p $DL_DIR && cd $DL_DIR
           wget "https://github.com/libusb/libusb/releases/download/v${LIBUSB1_VER}/libusb-${LIBUSB1_VER}.tar.bz2"
